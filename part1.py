@@ -267,6 +267,208 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    O termo "input" refere-se a qualquer informação que um usuário fornece ao programa. O comando Python `input` lê uma linha de entrada digitada pelo usuário. Ele também pode ser usado para exibir uma mensagem ao usuário, solicitando uma entrada específica.
+
+    O programa a seguir lê o nome do usuário com o comando `input`. Em seguida, ele o imprime com o comando `print`:
+    """
+    )
+    return
+
+
+@app.cell
+def _():
+    _name = input("What is your name? ")
+    print("Hi there, " + _name)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Name twice
+
+    Escreva um programa que peça o nome do usuário e o exiba duas vezes, em duas linhas consecutivas.
+
+    Um exemplo de como o programa deve funcionar:
+    ```none
+    What is your name? Paul
+    Paul
+    Paul
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell
+def _():
+    # My Solution
+    _username = input('What is your name? ')
+    print(_username)
+    print(_username)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## **2.1 Referencing a variable**""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## **2.2 More than one input**""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""Se a mesma variável for usada para armazenar mais de uma entrada, cada novo valor **substituirá** o anterior. Isso significa que, se a mesma variável for usada para armazenar duas entradas em sucessão, não há como acessar o primeiro valor de entrada após ele ter sido substituído pelo segundo.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Name and address
+
+    Escreva um programa que solicite o nome e o endereço do usuário. O programa também deve imprimir as informações fornecidas, da seguinte forma:
+    ```none
+    Given name: Steve
+    Family name: Sanders
+    Street address: 91 Station Road
+    City and postal code: London EC05 6AW
+    Steve Sanders
+    91 Station Road
+    London EC05 6AW
+    ```
+
+    ///
+    """
+    )
+    return
+
+
+@app.cell
+def _():
+    # My Solution
+    _gname = input('Given name: ')
+    _fname = input('Family name: ')
+    _street = input('Street address: ')
+    _city = input('City and postal code: ')
+
+    print(_gname + ' ' + _fname)
+    print(_street)
+    print(_city)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Fix the code: Utterances
+    Aqui está um programa que deve solicitar três declarações e imprimi-las, assim:
+    ```none
+    The 1st part: hickory
+    The 2nd part: dickory
+    The 3rd part: dock
+    hickory-dickory-dock!
+    ```
+
+    No entanto, há algo errado com o código abaixo. Por favor, corrija.
+    ///
+    """
+    )
+    return
+
+
+@app.cell
+def _():
+    # My Solution
+    part1 = input("The 1st part: ")
+    part2 = input("The 2st part: ")
+    part3 = input("The 3st part: ")
+    print(part1 + '-' + part2 + '-' + part3 + '!')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Story
+
+    Escreva um programa que imprima a seguinte história. O usuário informa um nome e um ano, que devem ser inseridos no texto.
+    ```none
+    Please type in a name: Mary
+    Please type in a year: 1572
+
+    Mary is a valiant knight, born in the year 1572. One morning Mary woke up to an awful racket: 
+    a dragon was approaching the village. Only Mary could save the village's residents.
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell
+def _():
+    # My Solution
+    _name = input('Please type in a name: ')
+    _year = input('Please type in a year: ')
+
+    print(_name + " is a valiant knight, born in the year " + _year + ". One morning " + _name + " woke up to an awful racket: a dragon was approaching the village. Only " + _name + " could save the village's residents.")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""Uma única variável pode ser referenciada muitas vezes em um programa.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Name and exclamation marks
+
+    Escreva um programa que peça o nome do usuário e o imprima duas vezes em uma única linha, de modo que haja um ponto de exclamação no início da linha, outro entre os dois nomes e um terceiro no final da linha.
+
+    O programa deve funcionar da seguinte forma:
+    ```none
+    What is your name? Paul
+    !Paul!Paul!
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell
+def _():
+    # My Solution
+    _name = input('What is your name? ')
+    print('!' + _name + '!' + _name + '!')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# **3 More about variables**""")
+    return
+
+
 @app.cell
 def _():
     return
