@@ -14,44 +14,6 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-    Vamos começar a programar nos familiarizando com o comando `print`, que imprime texto. Nesse contexto, imprimir significa essencialmente que o programa exibirá algum texto na tela.
-
-    O programa a seguir imprimirá "Olá!" na tela:
-    """
-    )
-    return
-
-
-@app.cell
-def _():
-    print('Olá!')
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""O programa não funcionará a menos que o código seja escrito **exatamente** como está acima. Por exemplo, tentar executar o comando `print` sem as aspas, como mostrado a seguir lançará um **erro de sintaxe**.""")
-    return
-
-
-app._unparsable_cell(
-    r"""
-    print(Olá!)
-    """,
-    name="_"
-)
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""Em resumo, se você quiser imprimir um **texto**, ele deve estar todo **entre aspas**, caso contrário o Python não o interpretará corretamente.""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
     /// attention | Emoticon
 
     Escreva um programa que imprima um emoticon: `:-)`
@@ -70,21 +32,7 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## **1.2 A program of multiple commands**""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""Vários comandos escritos em sucessão serão executados **em ordem**, do primeiro ao último.""")
-    return
-
-
-@app.cell
-def _():
-    print("Welcome to Introduction to Programming!")
-    print("First we will practice using the print command.")
-    print("This program prints three lines of text on the screen.")
+    mo.md(r"""## **1.1 A program of multiple commands**""")
     return
 
 
@@ -164,59 +112,6 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""Você também pode inserir operações aritméticas dentro de um comando `print`. Executá-lo imprimirá o **resultado** da operação.""")
-    return
-
-
-@app.cell
-def _():
-    print(2 + 5)
-    print(3 * 3)
-    print(2 + 2 * 10)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""Observe a ausência de aspas nas operações aritméticas acima. As aspas são usadas para indicar **strings**. No contexto da programação, strings são **sequências de caracteres**. Elas podem consistir em letras, números e quaisquer outros tipos de caracteres, como pontuação. As strings geralmente são impressas exatamente como são escritas. Portanto, os dois comandos a seguir produzem dois resultados bastante diferentes:""")
-    return
-
-
-@app.cell
-def _():
-    print(2 + 2 * 10)
-    print("2 + 2 * 10")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""## **1.3 Commenting**""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-    Qualquer linha que comece com o símbolo `#` é um comentário. Isso significa que qualquer texto nessa linha após o símbolo `#` não afetará de forma alguma o funcionamento do programa. O Python simplesmente o ignorará.
-
-    Comentários são usados para explicar como um programa funciona, tanto para o próprio programador quanto para outras pessoas que leem o código. Neste programa, um comentário explica o cálculo realizado no código:
-    """
-    )
-    return
-
-
-@app.cell
-def _():
-    print("Hours in a year:")
-    # there are 365 days in a year and 24 hours in each day
-    print(365*24)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
     mo.md(
         r"""
     /// attention | Minutes in a year
@@ -271,25 +166,6 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-    O termo "input" refere-se a qualquer informação que um usuário fornece ao programa. O comando Python `input` lê uma linha de entrada digitada pelo usuário. Ele também pode ser usado para exibir uma mensagem ao usuário, solicitando uma entrada específica.
-
-    O programa a seguir lê o nome do usuário com o comando `input`. Em seguida, ele o imprime com o comando `print`:
-    """
-    )
-    return
-
-
-@app.cell
-def _():
-    _name = input("What is your name? ")
-    print("Hi there, " + _name)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
     /// attention | Name twice
 
     Escreva um programa que peça o nome do usuário e o exiba duas vezes, em duas linhas consecutivas.
@@ -306,7 +182,7 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(disabled=True)
 def _():
     # My Solution
     _username = input('What is your name? ')
@@ -317,19 +193,7 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## **2.1 Referencing a variable**""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""## **2.2 More than one input**""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""Se a mesma variável for usada para armazenar mais de uma entrada, cada novo valor **substituirá** o anterior. Isso significa que, se a mesma variável for usada para armazenar duas entradas em sucessão, não há como acessar o primeiro valor de entrada após ele ter sido substituído pelo segundo.""")
+    mo.md(r"""## **2.1 More than one input**""")
     return
 
 
@@ -356,7 +220,7 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(disabled=True)
 def _():
     # My Solution
     _gname = input('Given name: ')
@@ -390,7 +254,7 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(disabled=True)
 def _():
     # My Solution
     part1 = input("The 1st part: ")
@@ -420,19 +284,13 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(disabled=True)
 def _():
     # My Solution
     _name = input('Please type in a name: ')
     _year = input('Please type in a year: ')
 
     print(_name + " is a valiant knight, born in the year " + _year + ". One morning " + _name + " woke up to an awful racket: a dragon was approaching the village. Only " + _name + " could save the village's residents.")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""Uma única variável pode ser referenciada muitas vezes em um programa.""")
     return
 
 
@@ -455,7 +313,7 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(disabled=True)
 def _():
     # My Solution
     _name = input('What is your name? ')
@@ -466,6 +324,182 @@ def _():
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""# **3 More about variables**""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## **3.1 Printing with f-strings**""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Extra space
+
+    Sua amiga está trabalhando em um aplicativo para quem procura emprego. Ela lhe envia este trecho de código:
+    ```python
+    name = "Tim Tester"
+    age = 20
+    skill1 = "python"
+    level1 = "beginner"
+    skill2 = "java"
+    level2 = "veteran"
+    skill3 = "programming"
+    level3 = "semiprofessional"
+    lower = 2000
+    upper = 3000
+
+    print("my name is ", name, " , I am ", age, "years old")
+    print("my skills are")
+    print("- ", skill1, " (", level1, ")")
+    print("- ", skill2, " (", level2, ")")
+    print("- ", skill3, " (", level3, " )")
+    print("I am looking for a job with a salary of", lower, "-", upper, "euros per month")
+    ```
+    O programa deve imprimir exatamente o seguinte:
+    ```none
+    my name is Tim Tester, I am 20 years old
+
+    my skills are
+     - python (beginner)
+     - java (veteran)
+     - programming (semiprofessional)
+
+    I am looking for a job with a salary of 2000-3000 euros per month
+    ```
+    O código funciona quase corretamente, mas não completamente. Este exercício possui testes muito rigorosos, que verificam a saída para cada bit de espaço em branco.
+
+    Corrija o código para que a impressão pareça correta. Observe especialmente como a notação de vírgula no comando `print` insere automaticamente um espaço ao redor das diferentes partes separadas por vírgula.
+
+    A maneira mais fácil de transformar o código para que ele atenda aos requisitos é usar **f-strings**.
+
+    **Dica**: você pode imprimir uma linha vazia adicionando um comando `print` vazio ou adicionando o caractere de quebra de linha `\n` à sua string.
+    ///
+    """
+    )
+    return
+
+
+@app.cell
+def _():
+    # My Solution
+    name = "Tim Tester"
+    age = 20
+    skill1 = "python"
+    level1 = "beginner"
+    skill2 = "java"
+    level2 = "veteran"
+    skill3 = "programming"
+    level3 = "semiprofessional"
+    lower = 2000
+    upper = 3000
+
+    print(f"my name is {name}, I am {age} years old\n")
+    print("my skills are")
+    print(f" - {skill1} ({level1})")
+    print(f" - {skill2} ({level2})")
+    print(f" - {skill3} ({level3})\n")
+    print(f"I am looking for a job with a salary of {lower}-{upper} euros per month")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## **3.2 Floating point numbers**""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Arithmetics
+
+    Este programa já contém duas variáveis ​​inteiras, `x` e `y`:
+    ```python
+    x = 27
+    y = 15
+    ```
+
+    Por favor, complete o programa para que ele também imprima o seguinte:
+    ```none
+    27 + 15 = 42
+    27 - 15 = 12
+    27 * 15 = 405
+    27 / 15 = 1.8
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell
+def _():
+    # My Solution
+    x = 27
+    y = 15
+
+    print(f'{x} + {y} = {x + y}')
+    print(f'{x} - {y} = {x - y}')
+    print(f'{x} * {y} = {x * y}')
+    print(f'{x} / {y} = {x / y}')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Fix the code: Print a single line
+
+    Cada comando `print` geralmente imprime uma linha própria, completa com uma mudança de linha no final. No entanto, se ele receber um argumento adicional `end = ""`, ele não imprimirá uma mudança de linha.
+
+    Por exemplo:
+    ```python
+    print("Hi ", end="")
+    print("there!")
+    ```
+
+    ```none
+    # output
+    Hi there!
+    ```
+    Por favor, corrija este programa para que todo o cálculo, incluindo o resultado, seja impresso em uma única linha. Não altere o número de comandos `print` utilizados.
+    ```python
+    print(5)
+    print(" + ")
+    print(8)
+    print(" - ")
+    print(4)
+    print(" = ")
+    print(5 + 8 - 4)
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell
+def _():
+    # My Solution
+    print(5, end='')
+    print(" + ", end='')
+    print(8, end='')
+    print(" - ", end='')
+    print(4, end='')
+    print(" = ", end='')
+    print(5 + 8 - 4)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# **4. Arithmetic operations**""")
     return
 
 
