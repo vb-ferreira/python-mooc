@@ -32,12 +32,6 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## **1.1 A program of multiple commands**""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
     mo.md(
         r"""
     /// attention | Fix the code: Seven Brothers
@@ -104,13 +98,7 @@ def _():
     return
 
 
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""## **1.2 Arithmetic operations**""")
-    return
-
-
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
     mo.md(
         r"""
@@ -188,12 +176,6 @@ def _():
     _username = input('What is your name? ')
     print(_username)
     print(_username)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""## **2.1 More than one input**""")
     return
 
 
@@ -329,12 +311,6 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## **3.1 Printing with f-strings**""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
     mo.md(
         r"""
     /// attention | Extra space
@@ -403,12 +379,6 @@ def _():
     print(f" - {skill2} ({level2})")
     print(f" - {skill3} ({level3})\n")
     print(f"I am looking for a job with a salary of {lower}-{upper} euros per month")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""## **3.2 Floating point numbers**""")
     return
 
 
@@ -503,8 +473,294 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Times five
+
+    Escreva um programa que peça um número ao usuário. O programa então imprime o número multiplicado por cinco.
+
+    O programa deve funcionar da seguinte forma:
+    ```none
+    Please type in a number: 3
+    3 times 5 is 15
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _n = int(input('Please type a number: '))
+    print(f'{_n} times 5 is {_n * 5}')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Name and age
+
+    Escreva um programa que pergunte ao usuário seu nome e ano de nascimento. O programa então imprime a seguinte mensagem:
+    ```none
+    What is your name? Frances Fictitious
+    Which year were you born? 1990
+    Hi Frances Fictitious, you will be 31 years old at the end of the year 2021
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    _name = input('What is your name? ')
+    _age = int(input('Which year were you born? '))
+    print(f'Hi {_name}, you will be {2021 - _age} years old at the end of the year 2021')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Seconds in a day
+
+    Escreva um programa que solicite ao usuário um número de dias. O programa então imprime o número de segundos correspondente à quantidade de dias fornecida.
+
+    O programa deve funcionar da seguinte forma:
+    ```none
+    How many days? 1
+    Seconds in that many days: 86400
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _days = int(input('How many days? '))
+    print(f'Seconds in that many thays: {_days * 24 * 60 * 60}')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Fix the code: Product
+
+    Este programa solicita ao usuário três números. O programa então imprime o produto, ou seja, os números multiplicados entre si. No entanto, há algo errado com o programa — ele não funciona direito, como você pode ver ao executá-lo. Por favor, corrija.
+
+    Um exemplo da execução esperada do programa:
+    ```none
+    Please type in the first number: 2
+    Please type in the second number: 3
+    Please type in the third number: 5
+    The product is 30
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _number1 = int(input("Please type in the first number: "))
+    _number2 = int(input("Please type in the second number: "))
+    _number3 = int(input("Please type in the third number: "))
+
+    _product = _number1 * _number2 * _number3
+
+    print("The product is", _product)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Sum and product
+
+    Escreva um programa que peça ao usuário dois números. O programa então imprimirá a soma e o produto dos dois números.
+
+    O programa deve funcionar da seguinte forma:
+    ```none
+    Number 1: 3
+    Number 2: 7
+    The sum of the numbers: 10
+    The product of the numbers: 21
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _n1 = int(input('Number 1: '))
+    _n2 = int(input('Number 2: '))
+
+    print(f'The sum of the numbers: {_n1 + _n2}')
+    print(f'The product of the numbers: {_n1 * _n2}')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Sum and mean
+
+    Escreva um programa que peça ao usuário quatro números. O programa então imprime a soma e a média dos números.
+
+    O programa deve funcionar da seguinte forma:
+    ```none
+    Number 1: 2
+    Number 2: 1
+    Number 3: 6
+    Number 4: 7
+    The sum of the numbers is 16 and the mean is 4.0
+    ```
+    ///
+    """
+    )
+    return
+
+
 @app.cell
 def _():
+    # My Solution
+    _n1 = int(input('Number 1: '))
+    _n2 = int(input('Number 2: '))
+    _n3 = int(input('Number 3: '))
+    _n4 = int(input('Number 4: '))
+
+    _soma = _n1 + _n2 + _n3 + _n4
+
+    print(f'The sum of the numbers is {_soma} and the mean is {_soma / 4}')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Food expenditure
+    Escreva um programa que estime o gasto típico de um usuário com alimentação.
+
+    O programa pergunta ao usuário quantas vezes por semana ele come no refeitório estudantil. Em seguida, pergunta o preço de um almoço típico de estudante e o valor gasto com compras de supermercado durante a semana.
+
+    Com base nessas informações, o programa calcula o gasto típico de um usuário com alimentação, tanto semanal quanto diária.
+
+    O programa deve funcionar da seguinte forma:
+    ```none
+    How many times a week do you eat at the student cafeteria? 4
+    The price of a typical student lunch? 2.5
+    How much money do you spend on groceries in a week? 28.5
+
+    Average food expenditure:
+    Daily: 5.5 euros
+    Weekly: 38.5 euros
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _weeks = int(input('How many times a week do you eat at the student cafeteria? '))
+    _price = float(input('The price of a typical student lunch? '))
+    _money = float(input('How much money do you spend on groceries in a week? '))
+
+    _weekly = (_weeks * _price) + _money
+    _daily = _weekly / 7
+
+    print('Average food expenditure:')
+    print(f'Daily: {_daily} euros')
+    print(f'Weekly: {_weekly} euros')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Students in groups ⚓
+
+    Escreva um programa que solicite o número de alunos em um curso e o tamanho desejado do grupo. O programa então imprimirá o número de grupos formados a partir dos alunos do curso. Se a divisão não for par, um dos grupos pode ter menos membros do que o especificado.
+
+    Se você não conseguir fazer seu código funcionar como esperado, não há problema algum em prosseguir e retornar a este exercício mais tarde. O tópico da próxima seção são instruções condicionais. Este exercício também pode ser resolvido usando uma construção condicional.
+    ```none
+    How many students on the course? 8
+    Desired group size? 4
+    Number of groups formed: 2
+    ```
+
+    ```none
+    How many students on the course? 11
+    Desired group size? 3
+    Number of groups formed: 4
+    ```
+    **Dica**: o operador de divisão inteira `//` pode ser útil aqui.
+    /// 
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _n = int(input('How many students on the course? '))
+    _s = int(input('Desired group size? '))
+
+    _r = (_n//_s) + bool(_n - (_s * (_n//_s)))
+
+    print(f'Number of groups formed: {_r}')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// details | **Model Solution**
+        type: info
+
+    ```python
+    students = int(input("How many students on the course? "))
+    group_size = int(input("Desired group size? "))
+ 
+    groups = (students + group_size - 1) // group_size
+ 
+    print("Number of groups formed:", groups)
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# **5. Conditional statements**""")
     return
 
 
