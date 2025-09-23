@@ -641,7 +641,7 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(disabled=True)
 def _():
     # My Solution
     _n1 = int(input('Number 1: '))
@@ -719,7 +719,7 @@ def _(mo):
     Number of groups formed: 4
     ```
     **Dica**: o operador de divisão inteira `//` pode ser útil aqui.
-    /// 
+    ///
     """
     )
     return
@@ -747,9 +747,9 @@ def _(mo):
     ```python
     students = int(input("How many students on the course? "))
     group_size = int(input("Desired group size? "))
- 
+
     groups = (students + group_size - 1) // group_size
- 
+
     print("Number of groups formed:", groups)
     ```
     ///
@@ -761,6 +761,384 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""# **5. Conditional statements**""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Orwell
+
+    Escreva um programa que peça ao usuário um número inteiro. O programa deve imprimir "Orwell" se o número for exatamente 1984, caso contrário, não fará nada.
+    ```none
+    Please type in a number: 2020
+    Please type in a number: 1984
+    Orwell
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _n = int(input('Please type in a number: '))
+
+    if _n == 1984:
+        print('Orwell')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Absolute value
+
+    Escreva um programa que peça ao usuário um número inteiro. Se o número for menor que zero, o programa deve imprimir o número multiplicado por -1. Caso contrário, o programa imprime o número como ele está. Veja os exemplos de comportamento esperado abaixo.
+    ```none
+    Please type in a number: -7
+    The absolute value of this number is 7
+
+    Please type in a number: 1
+    The absolute value of this number is 1
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _n = int(input('Please type in a number: '))
+
+    if _n < 0:
+        _n *= -1
+
+    print('The absolute value of this number is', _n)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Soup or no soup
+
+    Escreva um programa que peça o nome do usuário. Se o nome for qualquer coisa diferente de "Jerry", o programa solicitará o número de porções e exibirá o custo total. O preço de uma porção individual é 5,90.
+
+    Dois exemplos da execução do programa:
+    ```none
+    Please tell me your name: Kramer
+    How many portions of soup? 2
+    The total cost is 11.8
+    Next please!
+
+    Please tell me your name: Jerry
+    Next please!
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _name = input('Please tell me your name: ')
+
+    if _name != 'Jerry':
+        _portions = int(input('How many portions of soup? '))
+        print(f'The total cost is {_portions * 5.9}')
+
+    print('Next please!')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Order of magnitude
+
+    Escreva um programa que peça ao usuário um número inteiro. O programa deve então imprimir a magnitude do número, conforme os exemplos a seguir.
+    ```none
+    Please type in a number: 950
+    This number is smaller than 1000
+    Thank you!
+
+    Please type in a number: 59
+    This number is smaller than 1000
+    This number is smaller than 100
+    Thank you!
+
+    Please type in a number: 2
+    This number is smaller than 1000
+    This number is smaller than 100
+    This number is smaller than 10
+    Thank you!
+
+    Please type in a number: 1123
+    Thank you!
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _n = int(input('Please type in a number: '))
+
+    if _n < 1000:
+        print('This number is smaller than 1000')
+
+    if _n < 100:
+        print('This number is smaller than 100')
+
+    if _n < 10:
+        print('This number is smaller than 10')
+
+    print('Thank you!')
+
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Calculator
+
+    Escreva um programa que peça ao usuário dois números e uma operação. Se a operação for adição, multiplicação ou subtração, o programa deve calcular e imprimir o resultado da operação com os números fornecidos. Se o usuário digitar qualquer outra coisa, o programa não deve imprimir nada.
+
+    Alguns exemplos de comportamento esperado:
+    ```none
+    Number 1: 10
+    Number 2: 17
+    Operation: add
+
+    10 + 17 = 27
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _n1 = int(input('Number 1: '))
+    _n2 = int(input('Number 2: '))
+
+    _operation = input('Operation: ')
+
+    if _operation == 'add':
+        print(f'{_n1} + {_n2} = {_n1 + _n2}')
+    if _operation == 'subtract':
+        print(f'{_n1} - {_n2} = {_n1 - _n2}')
+    if _operation == 'multiply':
+        print(f'{_n1} * {_n2} = {_n1 * _n2}')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Termperatures
+
+    Escreva um programa que peça ao usuário a temperatura em graus Fahrenheit e, em seguida, imprima a mesma em graus Celsius. Se a temperatura convertida cair abaixo de zero grau Celsius, o programa também deverá imprimir "Brr! It's cold in here!".
+
+    A fórmula para converter graus Fahrenheit para graus Celsius pode ser facilmente encontrada em qualquer mecanismo de busca de sua escolha.
+
+    Dois exemplos de comportamento esperado:
+    ```none
+    Please type in a temperature (F): 101
+    101 degrees Fahrenheit equals 38.333333333333336 degrees Celsius
+
+    Please type in a temperature (F): 21
+    21 degrees Fahrenheit equals -6.111111111111111 degrees Celsius
+    Brr! It's cold in here!
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _tf = int(input('Please type in a temperature (F): '))
+
+    _tc = (5 / 9) * (_tf - 32)
+
+    print(f'{_tf} degrees Fahrenheit equals {_tc} degrees Celsius')
+
+    if _tc < 0: 
+        print("Brr! It's cold in here!")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Daily wages
+
+    Escreva um programa que solicite o salário por hora, as horas trabalhadas e o dia da semana. O programa deve então imprimir os salários diários, que são iguais ao salário por hora multiplicado pelas horas trabalhadas, exceto aos domingos, quando o salário por hora é dobrado.
+    ```none
+    Hourly wage: 8.5
+    Hours worked: 3
+    Day of the week: Monday
+    Daily wages: 25.5 euros
+
+    Hourly wage: 12.5
+    Hours worked: 10
+    Day of the week: Sunday
+    Daily wages: 250.0 euros
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _s = float(input('Hourly wage: '))
+    _h = float(input('Hours worked: '))
+    _d = input('Day oh the week: ')
+
+    if _d == 'Sunday':
+        print(f'Daily wages: {_s * _h * 2} euros')
+    else:
+        print(f'Daily wages: {_s * _h} euros')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | What to wear tomorrow
+
+    Escreva um programa que peça a previsão do tempo para amanhã e, em seguida, sugira roupas adequadas ao clima.
+
+    A sugestão deve mudar se a temperatura (medida em graus Celsius) estiver acima de 20, 10 ou 5 graus, e também se houver chuva no radar.
+
+    Alguns exemplos de comportamento esperado:
+    ```none
+    What is the weather forecast for tomorrow?
+    Temperature: 21
+    Will it rain (yes/no): no
+    Wear jeans and a T-shirt
+
+    What is the weather forecast for tomorrow?
+    Temperature: 11
+    Will it rain (yes/no): no
+    Wear jeans and a T-shirt
+    I recommend a jumper as well
+
+    What is the weather forecast for tomorrow?
+    Temperature: 7
+    Will it rain (yes/no): no
+    Wear jeans and a T-shirt
+    I recommend a jumper as well
+    Take a jacket with you
+
+    What is the weather forecast for tomorrow?
+    Temperature: 3
+    Will it rain (yes/no): yes
+    Wear jeans and a T-shirt
+    I recommend a jumper as well
+    Take a jacket with you
+    Make it a warm coat, actually
+    I think gloves are in order
+    Don't forget your umbrella!
+    ```
+
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    print('What is the weather forecast for tomorrow?')
+    _t = int(input('Temperature: '))
+    _r = input('Will it rain (yes/no): ')
+
+    print("Wear jeans and a T-shirt")
+
+    if _t <= 20:
+        print("I recommend a jumper as well")
+
+    if _t <= 10:
+        print("Take a jacket with you")
+
+    if _t <= 5:
+        print("Make it a warm coat, actually")
+        print("I think gloves are in order")
+
+
+    if _r == 'yes':
+        print("Don't forget your umbrella!")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Solving a quadratic equation
+
+    Escreva um programa para resolver uma equação quadrática da forma ax² + bx + c. O programa solicita os valores a, b e c. Ele deve então usar a fórmula quadrática para resolver a equação. A fórmula quadrática expressa com a função sqrt do Python é a seguinte:
+    ```none
+    x = (-b ± sqrt(b² - 4ac))/(2a).
+    ```
+    Você pode assumir que a equação sempre terá duas raízes reais, então a fórmula acima sempre funcionará.
+
+    Um exemplo de comportamento esperado:
+    ```none
+    Value of a: 1
+    Value of b: 2
+    Value of c: -8
+
+    The roots are 2.0 and -4.0
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell
+def _():
+    # My Solution
+    from math import sqrt
+
+    _a = int(input('Value of a: '))
+    _b = int(input('Value of b: '))
+    _c = int(input('Value of c: '))
+
+    _r1 = (-_b + sqrt(_b**2 - 4*_a*_c))/ (2 * _a)
+    _r2 = (-_b - sqrt(_b**2 - 4*_a*_c))/ (2 * _a)
+
+    print(f'The roots are {_r1} and {_r2}')
     return
 
 
