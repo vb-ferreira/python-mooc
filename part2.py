@@ -181,5 +181,182 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Age of maturity
+
+    Escreva um programa que pergunte a idade do usuário. O programa deve então imprimir uma mensagem com base na idade do usuário, considerando 18 anos como idade de maturidade.
+
+    Alguns exemplos de comportamento esperado:
+    ```none
+    How old are you? 12
+    You are not of age!
+
+    How old are you? 32
+    You are of age!
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _age = int(input('How old are you? '))
+    if _age < 18:
+        print('You are not of age!')
+    else:
+        print('You are of age!')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// Attention | Greater than or equal to
+
+    Escreva um programa que peça dois números inteiros. O programa deve então imprimir o que for maior. Se os números forem iguais, o programa deve imprimir uma mensagem diferente.
+
+    Alguns exemplos de comportamento esperado:
+    ```none
+    Please type in the first number: 5
+    Please type in another number: 3
+    The greater number was: 5
+
+    Please type in the first number: 5
+    Please type in another number: 5
+    The numbers are equal!
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _n1 = int(input('Please type in the first number: '))
+    _n2 = int(input('Please type in the another number: '))
+
+    if _n1 > _n2:
+        print(f'The greater number was: {_n1}')
+    elif _n2 > _n1:
+        print(f'The greater number was: {_n2}')
+    else:
+        print('The numbers are equal!')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | The elder
+
+    Escreva um programa que peça os nomes e as idades de duas pessoas. O programa deve então imprimir o nome do mais velho.
+
+    Alguns exemplos de comportamento esperado:
+    ```none
+    Person 1:
+    Name: Alan
+    Age: 26
+    Person 2:
+    Name: Ada
+    Age: 27
+    The elder is Ada
+
+    Person 1:
+    Name: Bill
+    Age: 1
+    Person 2:
+    Name: Jean
+    Age: 1
+    Bill and Jean are the same age
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    print('Person 1:')
+    _p1 = input('Name: ')
+    _age1 = int(input('Age: '))
+    _p2 = input('Name: ')
+    _age2 = int(input('Age: '))
+
+    if _age1 > _age2:
+        print(f'The elder is {_p1}')
+    elif _age2 > _age1:
+        print(f'The elder is {_p2}')
+    else:
+        print(f'{_p1} and {_p2} are the same age')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// attention | Alphabetically last
+
+    Operadores de comparação em Python também podem ser usados em strings. A string "a" é menor que a string "b" se vier alfabeticamente antes de "b". Observe, no entanto, que a comparação só é confiável se os caracteres comparados estiverem na mesma caixa, ou seja, ambos em MAIÚSCULAS ou ambos em minúsculas.
+
+    Escreva um programa que peça ao usuário duas palavras. O programa deve então imprimir a que vier por último em ordem alfabética.
+
+    Você pode assumir que todas as palavras serão digitadas inteiramente em minúsculas.
+
+    Alguns exemplos de comportamento esperado:
+    ```none
+    Please type in the 1st word: car
+    Please type in the 2nd word: scooter
+    scooter comes alphabetically last.
+
+    Please type in the 1st word: python
+    Please type in the 2nd word: python
+    You gave the same word twice.
+    ```
+    ///
+    """
+    )
+    return
+
+
+@app.cell(disabled=True)
+def _():
+    # My Solution
+    _w1 = input('Please type in the 1st word: ')
+    _w2 = input('Please type in the 2st word: ')
+
+    if _w1 > _w2:
+        print(f'{_w1} comes alphabetically last.')
+    elif _w2 > _w1:
+        print(f'{_w2} comes alphabetically last.')
+    else: 
+        print('You gave the same word twice.')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# **3. Combining conditions**""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r""" """)
+    return
+
+
 if __name__ == "__main__":
     app.run()
